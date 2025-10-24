@@ -74,15 +74,29 @@ table1 <- xtabs(~result + Sex, data=kRdata)
 lprop(table1)
 cprop(table1)
 ```
-
+the numerical results basically support the results we got in the graphical part. for females the percentage of women dying because of the disease is 1.4 % while for men it is 3%, which is the double of the female percentage which suggest that men have a higher chance of dying than women.
 ## Inferential results 
 
 ```{r}
 chisq.test(table1)
-chisqtestGC(table1)
-fisher.test(table1)
-```
 
+fisher.test(table1)
+
+result <- chisq.test(table1, correct = TRUE)
+
+
+result
+
+
+cbind(
+  Observed = as.vector(result$observed),
+  Expected = round(as.vector(result$expected), 2)
+)
+
+round(result$stdres, 2)
+
+```
+when observing the inferential results,i found out that the odds of a man to die because of covid in south korea is 2.3 times greater than the females,which agrees to the past results, as we saw that most of the dead people because of covid are mostly men. i also noticed that the p value is low, and thus this low value suggests that the chances of males dying because of covid is higher than females.
 
 
 ## Conclusions
