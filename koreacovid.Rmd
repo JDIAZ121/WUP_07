@@ -100,4 +100,4 @@ when observing the inferential results,i found out that the odds of a man to die
 
 
 ## Conclusions
-
+in this assignment, i was able to analyze covid data from south korea.the data was a categorical categorical data, so i used  my helper file to be able to solve the assignment. i was able to analyze the data deeply using graphical,numerical, and inferential results.in the graphical results i was able to do a chart using ggplot and when i got the charts and observed them i found that the number of people alive were way higher than that of the people dead.
