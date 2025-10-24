@@ -17,6 +17,13 @@ kRdata <- read.csv(file = 'kRdata.csv')
 kRdata <- kRdata %>%
 mutate(across(where(is.character), as.factor))
 installed.packages()[, "Package"]
+install.packages("vcdExtra")
+library(vcdExtra)
+
+install.packages("vcd")
+library(vcd)
+ls("package:vcd")
+ls("package:vcdExtra")
 
 install.packages("questionr")
 library(questionr)
@@ -70,6 +77,11 @@ cprop(table1)
 
 ## Inferential results 
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
 
 
