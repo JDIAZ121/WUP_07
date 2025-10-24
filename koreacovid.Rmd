@@ -16,6 +16,11 @@ require(lubridate)
 kRdata <- read.csv(file = 'kRdata.csv')
 kRdata <- kRdata %>%
 mutate(across(where(is.character), as.factor))
+installed.packages()[, "Package"]
+
+install.packages("questionr")
+library(questionr)
+ls("package:questionr")
 
 ```
 ### Data is from the Patient_Info dataset from South Korea 1 Jan to 1 May 2020
@@ -57,7 +62,11 @@ basicCC + geom_bar(stat="identity", position = "dodge")
 
   
 ## Numerical results
-
+```{r}
+table1 <- xtabs(~result + Sex, data=kRdata)
+lprop(table1)
+cprop(table1)
+```
 
 ## Inferential results 
 
